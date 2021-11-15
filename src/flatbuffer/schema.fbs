@@ -1,0 +1,77 @@
+// IDL file for evolving graphs, contains all messages exchanged via the
+// ringbuffers.
+
+namespace evolving_graphs;
+
+struct Edge {
+    src: uint64;
+    tgt: uint64;
+    weight: float;
+}
+
+table TileMessage {
+    tile_pointer: uint64;
+}
+
+table EdgeInserterDataMessage {
+    count: uint32;
+    edges: [Edge];
+    shutdown: bool;
+}
+
+struct EdgeInserterInfoMessage {
+    message_pointer: uint64;
+    size_message_pointer: uint64;
+    meta_tile_manager_id: uint64;
+    count_edges: uint64;
+}
+
+table EdgeInserterControlMessage {
+    message_pointer: uint64;
+    size_message_pointer: uint64;
+    remaining_tile_managers_pointer: uint64;
+    shutdown: bool;
+}
+
+table MetaEdgeInserterMessage {
+    messages: [EdgeInserterInfoMessage];
+    shutdown: bool;
+}
+
+table TileDistributorMessage {
+    shutdown: bool;
+    tiles: [uint64];
+}
+
+enum PerfEventType : byte {Duration, RingBufferSize}
+
+table ProfilingDuration {
+    start: uint64;
+    end: uint64;
+}
+
+table ProfilingRingBufferSize {
+    time: uint64;
+    size_distributor: uint64;
+}
+
+table PerfEventMessage {
+    shutdown: bool;
+    type: PerfEventType;
+    duration: ProfilingDuration;
+    ringbuffer_size: ProfilingRingBufferSize;
+    thread_id: uint32;
+    component: string;
+    metadata: string;
+    name: string;
+    pid: uint32 = 0;
+}
+
+table AlgorithmMessage {
+    shutdown: bool;
+    count_edges: uint64;
+}
+
+table EdgesInsertedMessage {
+    algorithm_reexecution_needed: bool;
+}

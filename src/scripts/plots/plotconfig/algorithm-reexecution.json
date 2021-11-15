@@ -1,0 +1,40 @@
+{
+  "options": {
+    "plot-directory": "incremental-execution"
+  },
+  "plots": [
+    {
+      "filename_prefix": "incremental-execution",
+      "filename_contents": [
+        "graphs",
+        "enable_algorithm_reexecution"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut, uk2007, twitter-full",
+          "algorithms": "pagerank-delta, bfs, connected-components, sssp, sswp",
+          "tile_batches": 256,
+          "traversal": "row-first"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut, uk2007, twitter-full",
+        "algorithm": "pagerank-delta, bfs, connected-components, sssp, sswp",
+        "tile_batch_size": 256,
+        "enable_algorithm_reexecution": true,
+        "runs": 5,
+        "algorithm_threshold": 0.7
+      },
+      "adjust_opts_plotting": {
+        "enable_algorithm_reexecution": [
+          "0",
+          "1"
+        ]
+      },
+      "x-axis": "algorithms",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

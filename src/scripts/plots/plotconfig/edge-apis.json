@@ -1,0 +1,36 @@
+{
+  "options": {
+    "plot-directory": "edge-apis"
+  },
+  "plots": [
+    {
+      "filename_prefix": "edge-apis",
+      "filename_contents": [
+        "graphs",
+        "enable_edge_api"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut, uk2007, twitter-full",
+          "algorithms": "pagerank-delta, bfs, connected-components, sssp, sswp",
+          "tile_batches": 256,
+          "traversal": "row-first"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut, uk2007, twitter-full",
+        "algorithm": "pagerank-delta, bfs, connected-components, sssp, sswp",
+        "tile_batch_size": 256,
+        "enable_edge_apis": true,
+        "runs": 5,
+        "algorithm_threshold": 0.7
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "algorithms",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

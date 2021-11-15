@@ -1,0 +1,37 @@
+{
+  "options": {
+    "plot-directory": "insertion-batch-graphin"
+  },
+  "plots": [
+    {
+      "filename_prefix": "insertion-batch",
+      "filename_contents": [
+        "graphs"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, rmat-22",
+          "algorithms": "connected-components",
+          "tile_batches": 256,
+          "traversal": "row-first",
+          "insertion_batch_size": "100000,200000,300000,400000,500000,600000,700000,800000,900000,1000000",
+          "in_memory_ingestion": "1"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, rmat-22",
+        "algorithm": "connected-components",
+        "tile_batch_size": 256,
+        "insertion_batch_size": "100000,200000,300000,400000,500000,600000,700000,800000,900000,1000000",
+        "in_memory_ingestion": true,
+        "runs": 5
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "insertion_batches",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

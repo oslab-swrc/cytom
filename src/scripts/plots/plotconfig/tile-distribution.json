@@ -1,0 +1,36 @@
+{
+  "options": {
+    "plot-directory": "tile-distribution"
+  },
+  "plots": [
+    {
+      "filename_prefix": "tile-distribution",
+      "filename_contents": [
+        "graphs",
+        "algorithms"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut, twitter-full, uk2007",
+          "algorithms": "pagerank-delta, bfs, connected-components, sssp, sswp",
+          "tile_batches": 256,
+          "traversal": "row-first"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut, twitter-full, uk2007",
+        "algorithm": "pagerank-delta, bfs, connected-components, sssp, sswp",
+        "tile_batch_size": 256,
+        "tile_distribution_strategy": true,
+        "runs": 5,
+        "algorithm_threshold": 0.7
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "tile-distribution-strategy",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

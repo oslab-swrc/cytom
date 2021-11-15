@@ -1,0 +1,37 @@
+{
+  "options": {
+    "plot-directory": "insertion-batch"
+  },
+  "plots": [
+    {
+      "filename_prefix": "insertion-batch",
+      "filename_contents": [
+        "graphs"
+      ],
+      "selectors": [
+        {
+          "graphs": "rmat-22, rmat-24, rmat-27",
+          "algorithms": "bfs",
+          "tile_batches": 256,
+          "traversal": "row-first",
+          "in_memory_ingestion": "1"
+        }
+      ],
+      "opts": {
+        "graph": "rmat-22, rmat-24, rmat-27",
+        "algorithm": "bfs",
+        "tile_batch_size": 256,
+        "disable_algorithm": true,
+        "insertion_batch_size": "1..16777216",
+        "in_memory_ingestion": true,
+        "runs": 5
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "insertion_batches",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

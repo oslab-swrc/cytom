@@ -1,0 +1,34 @@
+{
+  "options": {
+    "plot-directory": "baseline"
+  },
+  "plots": [
+    {
+      "filename_prefix": "baseline",
+      "filename_contents": [
+        "graphs"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut, uk2007, twitter-full",
+          "algorithms": "pagerank-delta, bfs, connected-components, sssp, sswp",
+          "tile_batches": 256,
+          "traversal": "row-first"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut, uk2007, twitter-full",
+        "algorithm": "pagerank-delta, bfs, connected-components, sssp, sswp",
+        "tile_batch_size": 256,
+        "runs": 5,
+        "algorithm_threshold": 0.7
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "insertion_batches",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

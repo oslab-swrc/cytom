@@ -1,0 +1,39 @@
+{
+  "options": {
+    "plot-directory": "write-edges"
+  },
+  "plots": [
+    {
+      "filename_prefix": "write-edges",
+      "filename_contents": [
+        "graphs",
+        "enable_write_edges"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut",
+          "algorithms": "pagerank-delta, bfs, connected-components, sssp, sswp",
+          "tile_batches": 256,
+          "traversal": "row-first"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut",
+        "algorithm": "pagerank-delta, bfs, connected-components, sssp, sswp",
+        "tile_batch_size": 256,
+        "enable_write_edges": true,
+        "runs": 5
+      },
+      "adjust_opts_plotting": {
+        "enable_write_edges": [
+          "0",
+          "1"
+        ]
+      },
+      "x-axis": "algorithms",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

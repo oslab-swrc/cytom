@@ -1,0 +1,39 @@
+{
+  "options": {
+    "plot-directory": "traversals"
+  },
+  "plots": [
+    {
+      "filename_prefix": "traversals-cache-hits",
+      "filename_contents": [
+        "graphs",
+        "traversals"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut",
+          "algorithms": "pagerank-delta, connected-components, bfs, sssp, sswp",
+          "traversal": "row-first, column-first, hilbert"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut",
+        "algorithm": "pagerank-delta, connected-components, bfs, sssp, sswp",
+        "tile_batch_size": "8",
+        "insertion_batch_size": "1048576",
+        "enable_traversals": true,
+        "perf_stat": true,
+        "runs": 5,
+        "algorithm_threshold": 0.7
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "algorithms",
+      "outputs": [
+        "insertion_throughput",
+        "store_hit_rate",
+        "cache_hits"
+      ]
+    }
+  ]
+}

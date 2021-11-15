@@ -1,0 +1,33 @@
+{
+  "options": {
+    "plot-directory": "sssp-delta"
+  },
+  "plots": [
+    {
+      "filename_prefix": "sssp-delta",
+      "filename_contents": [
+        "graphs"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut",
+          "algorithms": "sssp",
+          "delta": "0.00, 0.0025, 0.005, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64",
+          "traversal": "row-first"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut",
+        "algorithm": "sssp",
+        "enable_delta": true,
+        "runs": 5
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "delta",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

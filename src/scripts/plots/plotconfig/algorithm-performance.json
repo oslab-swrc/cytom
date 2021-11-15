@@ -1,0 +1,36 @@
+{
+  "options": {
+    "plot-directory": "algorithm-performance"
+  },
+  "plots": [
+    {
+      "filename_prefix": "algorithm-performance",
+      "filename_contents": [
+        "graphs"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut, twitter-full, uk2007",
+          "algorithms": "pagerank-delta, connected-components, bfs, sssp, sswp",
+          "traversal": "row-first",
+          "tile_batch_size": 256
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut, twitter-full, uk2007",
+        "algorithm": "pagerank-delta, connected-components, bfs, sssp, sswp",
+        "tile_batch_size": 256,
+        "insertion_batch_size": "1048576",
+        "runs": 5,
+        "algorithm_threshold": 0.7
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "algorithms",
+      "outputs": [
+        "insertion_throughput",
+        "insertion_time"
+      ]
+    }
+  ]
+}

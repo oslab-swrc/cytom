@@ -1,0 +1,35 @@
+{
+  "options": {
+    "plot-directory": "insertion-batch"
+  },
+  "plots": [
+    {
+      "filename_prefix": "insertion-batch",
+      "filename_contents": [
+        "graphs"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut, twitter-full, uk2007",
+          "algorithms": "bfs",
+          "tile_batches": 256,
+          "traversal": "row-first"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut, twitter-full, uk2007",
+        "algorithm": "bfs",
+        "tile_batch_size": 256,
+        "disable_algorithm": true,
+        "insertion_batch_size": "1..16777216",
+        "runs": 5
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "insertion_batches",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

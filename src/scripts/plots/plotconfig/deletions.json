@@ -1,0 +1,49 @@
+{
+  "options": {
+    "plot-directory": "deletions"
+  },
+  "plots": [
+    {
+      "filename_prefix": "deletions",
+      "filename_contents": [
+        "graphs",
+        "algorithms",
+        "enable_algorithm_reexecution"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut, uk2007, twitter-full",
+          "algorithms": "bfs, connected-components",
+          "tile_batches": 256,
+          "insertion_batches": 8192,
+          "traversal": "row-first"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut, uk2007, twitter-full",
+        "algorithm": "bfs, connected-components",
+        "tile_batch_size": 256,
+        "insertion_batch_size": 8192,
+        "enable_deletions": true,
+        "max_edges": 10000000,
+        "runs": 5
+      },
+      "adjust_opts_plotting": {
+        "deletions": [
+          "0.01",
+          "0.05",
+          "0.10"
+        ],
+        "enable_algorithm_reexecution": [
+          "0",
+          "1"
+        ]
+      },
+      "x-axis": "deletions",
+      "outputs": [
+        "insertion_throughput",
+        "algorithm_reexecutions"
+      ]
+    }
+  ]
+}

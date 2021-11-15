@@ -1,0 +1,35 @@
+{
+  "options": {
+    "plot-directory": "algorithm-insertion-batch"
+  },
+  "plots": [
+    {
+      "filename_prefix": "algorithm-insertion-batch",
+      "filename_contents": [
+        "graphs",
+        "algorithms"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut",
+          "algorithms": "pagerank-delta, connected-components, bfs, sssp, sswp",
+          "traversal": "row-first",
+          "tile_batch_size": 256
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut",
+        "algorithm": "pagerank-delta, connected-components, bfs, sssp, sswp",
+        "tile_batch_size": 256,
+        "insertion_batch_size": "1024..16777216",
+        "runs": 5
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "insertion_batches",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}

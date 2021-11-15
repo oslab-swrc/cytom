@@ -1,0 +1,35 @@
+{
+  "options": {
+    "plot-directory": "algorithm-tile-batch"
+  },
+  "plots": [
+    {
+      "filename_prefix": "algorithm-tile-batch",
+      "filename_contents": [
+        "graphs",
+        "algorithms"
+      ],
+      "selectors": [
+        {
+          "graphs": "livejournal, orkut",
+          "algorithms": "pagerank-delta, connected-components, bfs, sssp, sswp",
+          "traversal": "row-first",
+          "tile_batch_size": "1..4096"
+        }
+      ],
+      "opts": {
+        "graph": "livejournal, orkut",
+        "algorithm": "pagerank-delta, connected-components, bfs, sssp, sswp",
+        "tile_batch_size": "1..1024",
+        "insertion_batch_size": "1048576",
+        "runs": 10
+      },
+      "adjust_opts_plotting": {
+      },
+      "x-axis": "tile_batches",
+      "outputs": [
+        "insertion_throughput"
+      ]
+    }
+  ]
+}
